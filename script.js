@@ -56,4 +56,48 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.body.insertBefore(playButton, videoGrid);
     document.body.insertBefore(pauseButton, videoGrid);
+
+    // Apply Instagram-like styles
+    document.body.style.margin = "0";
+    document.body.style.fontFamily = "'Arial', sans-serif";
+    document.body.style.background = "linear-gradient(to bottom, #fdf497, #fdf497, #fd5949, #d6249f, #285AEB)";
+    document.body.style.color = "#fff";
+    document.body.style.display = "flex";
+    document.body.style.flexDirection = "column";
+    document.body.style.alignItems = "center";
+    document.body.style.justifyContent = "center";
+    document.body.style.minHeight = "100vh";
+
+    videoGrid.style.display = "grid";
+    videoGrid.style.gridTemplateColumns = "repeat(auto-fit, minmax(300px, 1fr))";
+    videoGrid.style.gap = "20px";
+    videoGrid.style.width = "90%";
+    videoGrid.style.maxWidth = "1200px";
+
+    const buttons = document.querySelectorAll("button");
+    buttons.forEach(button => {
+        button.style.padding = "10px 20px";
+        button.style.margin = "10px";
+        button.style.border = "none";
+        button.style.borderRadius = "5px";
+        button.style.backgroundColor = "#fd5949";
+        button.style.color = "#fff";
+        button.style.cursor = "pointer";
+        button.style.fontSize = "16px";
+        button.style.boxShadow = "0 4px 6px rgba(0, 0, 0, 0.1)";
+        button.addEventListener("mouseover", () => {
+            button.style.backgroundColor = "#d6249f";
+        });
+        button.addEventListener("mouseout", () => {
+            button.style.backgroundColor = "#fd5949";
+        });
+    });
+
+    const videoContainers = document.querySelectorAll(".video-container");
+    videoContainers.forEach(container => {
+        container.style.border = "2px solid #fff";
+        container.style.borderRadius = "10px";
+        container.style.overflow = "hidden";
+        container.style.boxShadow = "0 4px 6px rgba(0, 0, 0, 0.1)";
+    });
 });
